@@ -1,38 +1,199 @@
 .App {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ background-color: #ccc;
+ min-height: 100vh;
+}
+
+.search{
+  text-align: center;
+}
+.search input, .search button{
+  padding: 8px;
+  border: 1px solid grey;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search button{
+display: inline-block;
+margin: 10px 0;
+padding: 8px 71px;
+color: white;
+background-color: #8907AA;
+}
+
+.profile-card{
+  max-width: 330px;
+  background-color: white;
+  box-shadow: 5px 5px 10px grey;
+  border-radius: 5px;
+}
+.profile-card div, .profile-card section, .profile-card button{
+  border-radius: inherit;
+}
+
+.bg-image{
+  min-height: 100px;
+  background: linear-gradient(to right, rgb(137, 7, 170), rgb(150, 15, 184), rgb(165, 21, 201));
+}
+
+.user-avatar{
+  position: relative;
+}
+.user-avatar img{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -110px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.user-details{
+  padding: 45px 10px 10px 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.user-name{
+  margin-top: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.user-bio{
+  line-height: 26px;
 }
 
-.App-header {
-  background-color: #282c34;
+.location-contact, .user-stats{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.location-contact>div{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.location-contact i{
+  color: #8907AA;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.location-contact a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.user-stats{
+  text-align: center;
+  margin-top: 10px;
+  padding: 8px 0;
+  background-color: #edeef0;
+  position: relative;
+}
+
+.user-stats::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background-color: #dadbdb;
+  top: 0;
+}
+
+.followers span:first-child, .following span:first-child, .follow-btn{
+  font-weight: bold;
+}
+
+
+.follow-btn{
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #66ba6a;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  font-size: larger;
+  cursor: pointer;
+}
+
+.loader-container{
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  width: 100vw;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.loader-07 {
+  border: 0 solid transparent;
+  border-radius: 50%;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.loader-07:before, .loader-07:after {
+  content: "";
+  border: 0.2em solid white;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: loader-07 1s linear infinite;
+          animation: loader-07 1s linear infinite;
+  opacity: 0;
+}
+.loader-07:before {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.loader-07:after {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@-webkit-keyframes loader-07 {
+  0% {
+    transform: scale(0);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
   }
 }
+
+@keyframes loader-07 {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+
+
